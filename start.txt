@@ -1,0 +1,10 @@
+#!/bin/bash
+nohup java -jar ebook-eureka-service.jar > /dev/null 2>&1 &
+nohup java -jar ebook-manager.jar > /dev/null 2>&1 &
+nohup java -jar ebook-order.jar > /dev/null 2>&1 &
+nohup java -jar ebook-sso.jar > /dev/null 2>&1 &
+nohup java -jar ebook-search.jar > /dev/null 2>&1 &
+nohup java -jar ebook-portal.jar > /dev/null 2>&1 &
+/home/ftpuser/redis/bin/redis-server /home/ftpuser/redis/bin/redis.conf
+/home/ftpuser/tomcat-solr-ebook/tomcat-solr/bin/startup.sh
+#nohup java -jar ebook-portal.jar --yeepay.switch=false > /dev/null 2>&1 &
